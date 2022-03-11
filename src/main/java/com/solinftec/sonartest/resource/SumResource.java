@@ -22,7 +22,7 @@ public class SumResource {
     // public ResponseEntity<String> result() {
     //     return ResponseEntity.ok("oi");
     // }
-    public ResponseEntity<Integer> result(@RequestParam("number1") Integer number1, @RequestParam("number2") Integer number2) {
-        return ResponseEntity.ok(sumService.sum(number1, number2));
+    public ResponseEntity<Integer> result(@RequestParam("number1") int i, @RequestParam("number2") int j) {
+        return ResponseEntity.ok(sumService.sum(i, j));
     }
 }

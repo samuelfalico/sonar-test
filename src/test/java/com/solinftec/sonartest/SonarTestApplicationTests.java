@@ -1,23 +1,19 @@
 package com.solinftec.sonartest;
 
-import com.solinftec.sonartest.service.SumService;
-
-import org.junit.jupiter.api.BeforeEach;
+import com.solinftec.sonartest.utils.TestConfigImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 
-@SpringBootTest
-class SonarTestApplicationTests {
+class SonarTestApplicationTests extends TestConfigImpl {
+	
+	@Autowired
+    ApplicationContext applicationContext;
 
-	SumService sumService;
-    @BeforeEach
-    public void setUp() throws Exception {
-        sumService = new SumService();
-    }
     @Test
-    public void testAdd() {
-        Assertions.assertEquals(6, sumService.sum(5, 1));
+    void test() {
+        Assertions.assertNotNull(applicationContext);
     }
 
 }
