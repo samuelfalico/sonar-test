@@ -19,9 +19,6 @@ public class SumResource {
     }
 
     @GetMapping
-    // public ResponseEntity<String> result() {
-    //     return ResponseEntity.ok("oi");
-    // }
     public ResponseEntity<Integer> result(@RequestParam("number1") int i, @RequestParam("number2") int j) {
         return ResponseEntity.ok(sumService.sum(i, j));
     }
