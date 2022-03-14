@@ -18,6 +18,10 @@ public class SumResource {
         this.sumService = sumService;
     }
 
+    // public SumResource(SumService sumService) {
+    //     this.sumService = sumService;
+    // }
+
     @GetMapping
     public ResponseEntity<Integer> result(@RequestParam("number1") int i, @RequestParam("number2") int j) {
         return ResponseEntity.ok(sumService.sum(i, j));
